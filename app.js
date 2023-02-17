@@ -10,35 +10,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const lTetrominoes = [
     [1, width+1, width*2+1, 2],
     [width, width+1, width+2, width*2+2],
-    [1, width+1, width*2+1, width*2]
+    [1, width+1, width*2+1, width*2],
     [width, width*2, width*2+1, width*2+2]
   ]
 
   const zTetrominoes = [
     [0, width, width+1, width*2+1],
     [width+1, width+2, width*2, width*2+1],
-    [0, width, width+1, width*2+1]
+    [0, width, width+1, width*2+1],
     [width+1, width+2, width*2, width*2+1]
   ]
 
   const tTetrominoes = [
     [1, width, width+1, width+2],
     [1, width+1, width+2, width*2+1],
-    [width, width+1, width+2, width*2+1]
+    [width, width+1, width+2, width*2+1],
     [1, width, width+1, width*2+1]
   ]
 
   const oTetrominoes = [
     [0, 1, width, width+1],
     [0, 1, width, width+1],
-    [0, 1, width, width+1]
+    [0, 1, width, width+1],
     [0, 1, width, width+1]
   ]
 
   const iTetrominoes = [
     [1, width+1, width*2+1, width*3+1],
     [width, width+1, width+2, width+3],
-    [1, width+1, width*2+1, width*3+1]
+    [1, width+1, width*2+1, width*3+1],
     [width, width+1, width+2, width+3]
   ]
 
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentPosition = 4
   let currentRotation = 0
+  console.log(theTetrominoes[0][0])
 
   // randomly select a Tetromino and its first rotation
   let random = Math.floor(Math.random()*theTetrominoes.length)
@@ -132,18 +133,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //rotate the tetromino
   function rotate() {
-    function rotate() {
     undraw()
     currentRotation ++
     if(currentRotation === current.length) { //if the current rotation gets to 4, make it go back to 0
       currentRotation = 0
     }
     current = theTetrominoes[random][currentRotation]
-    checkRotatedPosition()
     draw()
   }
 
 
 
 
-})
+
+});
